@@ -239,12 +239,40 @@
             www.billioncompany.in
           </a>
         </div>
-        <img
-          class="contact-image"
-          src="https://images.unsplash.com/photo-1671785253964-bdb43087ed99?auto=format&fit=crop&w=760&h=600&q=85"
-          alt="A connected electric vehicle ready for its next journey"
-          loading="lazy"
-        />
+        <form class="contact-form" (submit)="sendContact($event)" novalidate>
+          <h3>Send us a message</h3>
+          <label>Name
+            <input name="name" type="text" required maxlength="100" autocomplete="name" />
+          </label>
+          <label>Email
+            <input name="email" type="email" required maxlength="150" autocomplete="email" />
+          </label>
+          <div class="form-row">
+            <label>Phone
+              <input name="phone" type="tel" maxlength="30" autocomplete="tel" />
+            </label>
+            <label>Interested in
+              <select name="interest">
+                @for (item of interests; track item) {
+                  <option [value]="item">{{ item }}</option>
+                }
+              </select>
+            </label>
+          </div>
+          <label>Message
+            <textarea name="message" rows="4" required maxlength="3000"></textarea>
+          </label>
+          <input class="hp-field" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="primary-btn" type="submit" [disabled]="contactStatus() === 'sending'">
+            {{ contactStatus() === 'sending' ? 'Sending…' : 'Send message' }}
+          </button>
+          @if (contactStatus() === 'success') {
+            <p class="form-msg success" role="status">Thank you! Your message has been sent. We’ll get back to you soon.</p>
+          }
+          @if (contactStatus() === 'error') {
+            <p class="form-msg error" role="alert">{{ contactError() }}</p>
+          }
+        </form>
         <span class="contact-spark" aria-hidden="true">ϟ</span>
       </div>
     </section>

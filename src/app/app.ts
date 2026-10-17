@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,36 @@ import { Component } from '@angular/core';
   styleUrl: './app.css',
 })
 export class App {
+  readonly contactStatus = signal<'idle' | 'sending' | 'success' | 'error'>('idle');
+  readonly contactError = signal('');
+  readonly interests = ['EV charging', 'Solar inverters', 'Solar PV modules', 'Power transformers', 'Other'];
+
+  async sendContact(event: Event): Promise<void> {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    this.contactStatus.set('sending');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error ?? 'Something went wrong. Please try again.');
+      }
+      form.reset();
+      this.contactStatus.set('success');
+    } catch (err) {
+      this.contactError.set(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      this.contactStatus.set('error');
+    }
+  }
+
   readonly brandName = 'Billion Miles';
   readonly currentYear = new Date().getFullYear();
   readonly navItems = [
