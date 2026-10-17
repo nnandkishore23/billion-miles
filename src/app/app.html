@@ -1,0 +1,262 @@
+<div class="page-shell">
+  <header class="topbar">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="Billion Miles home">
+        <img class="brand-mark" src="/billion-logo.png" alt="" />
+        <span class="brand-copy">
+          <strong>{{ brandName }}</strong>
+          <small>Smarter mobility &amp; clean energy</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        @for (item of navItems; track item.label) {
+          <a [href]="item.href">{{ item.label }}</a>
+        }
+      </nav>
+
+      <a class="nav-cta" href="#contact">Contact Us <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Powering smarter mobility &amp; clean energy</p>
+        <h1>Powering a<br />cleaner <span>future.</span></h1>
+        <p class="lead">
+          From JioThings EV chargers under the TruePower brand to solar inverters, PV modules and
+          power transformers, we connect homes, businesses, fleets and industries with reliable
+          solutions for a cleaner, greener future.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-btn" href="#solutions">Explore product range <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#contact">Talk to our team <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="stats-grid">
+          @for (highlight of highlights; track highlight.value) {
+            <div class="stat-box">
+              <span class="stat-icon" aria-hidden="true">↗</span>
+              <div>
+                <strong>{{ highlight.value }}</strong>
+                <span>{{ highlight.label }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card main-card">
+          <img
+            src="/ev-charging-feature.jpg"
+            alt="Electric car plugged into an EV charger at an outdoor charging location"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="floating-panel">
+          <span class="pulse-dot"></span>
+          <div>
+            <small>North India channel partner</small>
+            <strong>JioThings · TruePower</strong>
+          </div>
+          <span class="panel-bolt" aria-hidden="true">ϟ</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container about-section">
+      <div class="section-heading left-aligned">
+        <p class="eyebrow">Who we are</p>
+        <h2>Smarter mobility.<br />Cleaner energy.</h2>
+      </div>
+      <div class="about-copy">
+        <p>
+          Billion Miles specializes in EV charging and renewable energy solutions. We deliver
+          high-quality products and reliable support to help homes, businesses and industries
+          transition to a cleaner, greener future.
+        </p>
+        <a class="inline-link" href="#partnership">Meet our JioThings partnership <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section id="solutions" class="section solutions-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">India’s smart EV charging network &amp; renewable energy</p>
+          <h2>Complete solutions for a<br />cleaner, greener tomorrow.</h2>
+          <p class="section-intro">
+            EV charging, solar equipment and dependable power infrastructure for projects of every scale.
+          </p>
+        </div>
+
+        <div class="solutions-grid">
+          @for (solution of solutions; track solution.title) {
+            <article class="solution-card">
+              <div class="solution-image">
+                <img [src]="solution.image" [alt]="solution.alt" loading="lazy" />
+                <span class="solution-icon" aria-hidden="true">{{ solution.icon }}</span>
+              </div>
+              <div class="solution-content">
+                <span class="product-category">{{ solution.category }}</span>
+                <h3>{{ solution.title }}</h3>
+                <p class="product-details">{{ solution.details }}</p>
+                <p>{{ solution.description }}</p>
+                @if (solution.partner) {
+                  <span class="product-partner">{{ solution.partner }} chargers</span>
+                }
+                <a href="#contact" [attr.aria-label]="'Ask us about ' + solution.category">
+                  Enquire about this product <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="directorship" class="section directorship-section">
+      <div class="container directorship-layout">
+        <div>
+          <p class="eyebrow">Leadership &amp; directorship</p>
+          <h2>Meet our directors.</h2>
+          <p class="directorship-intro">
+            The leadership team driving Billion Miles’ vision for smarter mobility and clean energy.
+          </p>
+        </div>
+        <div class="directors-grid">
+          @for (director of directors; track director.name) {
+            <article class="director-card">
+              <div class="director-avatar" aria-hidden="true">{{ director.name.charAt(0) }}</div>
+              <span class="director-title">Director of the Company</span>
+              <h3>{{ director.name }}</h3>
+              <span class="vision-label">Vision</span>
+              <p>{{ director.vision }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why choose Billion Miles?</p>
+          <h2>Reliable solutions.<br />Support at every step.</h2>
+        </div>
+        <div class="steps-grid">
+          @for (step of steps; track step.number) {
+            <article class="step-card">
+              <span>{{ step.number }}</span>
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section approach-section">
+      <div class="container approach-layout">
+        <div class="approach-visual">
+          <img
+            src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&fit=crop&w=1200&q=85"
+            alt="Electric vehicle charging cable connected to a car"
+            loading="lazy"
+          />
+          <div class="visual-caption">
+            <span aria-hidden="true">ϟ</span>
+            <div><small>Made for electric</small><strong>Ready for real life</strong></div>
+          </div>
+        </div>
+        <div class="approach-copy">
+          <p class="eyebrow">End-to-end support</p>
+          <h2>From product selection to ongoing support.</h2>
+          <p>
+            We help you find the right products for your project, coordinate deployment, and
+            provide ongoing assistance for EV charging and renewable energy solutions.
+          </p>
+          <div class="approach-points">
+            <div><span>01</span><strong>Smart, future-ready technology</strong></div>
+            <div><span>02</span><strong>Reliable and safety-focused products</strong></div>
+            <div><span>03</span><strong>Product selection through deployment</strong></div>
+          </div>
+          <a class="primary-btn" href="#contact">Let’s find your solution <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="partnership" class="section partnership-section">
+      <div class="container partnership-layout">
+        <div class="partnership-copy">
+          <p class="eyebrow">North India channel partner · TruePower brand</p>
+          <h2>JioThings EV chargers.<br />Powered by TruePower.</h2>
+          <p>
+            Billion Miles is a North India channel partner for JioThings EV chargers under the
+            TruePower brand. We offer sales support, deployment coordination and ongoing assistance
+            across residential AC, commercial DC, fleet and public charging.
+          </p>
+          <a class="light-btn" href="#contact">Enquire about JioThings chargers <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="partnership-visual">
+          <img
+            src="https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?auto=format&fit=crop&w=1100&q=85"
+            alt="Electric vehicle charging in an urban setting"
+            loading="lazy"
+          />
+          <span class="image-stamp"><span aria-hidden="true">ϟ</span> Move with possibility</span>
+        </div>
+      </div>
+      <div class="container trusted-partners">
+        <p>Our trusted partners</p>
+        <div class="partner-list">
+          @for (partner of trustedPartners; track partner.name) {
+            <div class="partner-name">
+              <img class="partner-logo" [src]="partner.image" [alt]="partner.alt" loading="lazy" />
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <div class="contact-panel">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact Us</p>
+          <h2>Let’s power your next project.</h2>
+          <p>Contact us for EV charging, solar inverters, PV modules and power transformer enquiries.</p>
+          <a class="contact-link" href="tel:+917738896005">+91 77388 96005 <span aria-hidden="true">↗</span></a>
+          <a class="contact-link" href="mailto:info@billioncompany.in">
+            info@billioncompany.in <span aria-hidden="true">↗</span>
+          </a>
+          <p class="contact-address">
+            1207, 83 Metro Street, Sector 83,<br />
+            Gurgaon, Haryana – 122004
+          </p>
+          <a class="contact-website" href="https://www.billioncompany.in" target="_blank" rel="noopener noreferrer">
+            www.billioncompany.in
+          </a>
+        </div>
+        <img
+          class="contact-image"
+          src="https://images.unsplash.com/photo-1671785253964-bdb43087ed99?auto=format&fit=crop&w=760&h=600&q=85"
+          alt="A connected electric vehicle ready for its next journey"
+          loading="lazy"
+        />
+        <span class="contact-spark" aria-hidden="true">ϟ</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#home">
+        <img src="/billion-logo.png" alt="" loading="lazy" />
+        <span>{{ brandName }}</span>
+      </a>
+      <p>Powering smarter mobility &amp; clean energy. <span>© {{ currentYear }} {{ brandName }}</span></p>
+    </div>
+  </footer>
+</div>
