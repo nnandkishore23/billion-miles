@@ -1,1 +1,301 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0d172b;
+  background: #eef4ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+app-root .directorship-section {
+  color: #fff;
+  background: #477a49;
+}
+
+app-root .directorship-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 38px;
+}
+
+app-root .directorship-section .eyebrow {
+  color: var(--green);
+}
+
+app-root .directorship-layout h2 {
+  max-width: 570px;
+  margin: 0;
+  font-size: clamp(2.6rem, 4.5vw, 4.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+}
+
+app-root .directorship-intro {
+  max-width: 540px;
+  margin: 19px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.8;
+}
+
+app-root .directors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+app-root .director-card {
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 19px;
+  color: #19372a;
+  background: #f7f9f5;
+}
+
+app-root .director-avatar {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  margin-bottom: 19px;
+  place-items: center;
+  border-radius: 50%;
+  color: #183327;
+  background: #d9efbb;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+app-root .director-title {
+  color: #54814c;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+app-root .director-card h3 {
+  margin: 6px 0 19px;
+  color: #183327;
+  font-size: 1.22rem;
+}
+
+app-root .vision-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #526850;
+  font-size: 0.71rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+app-root .director-card p {
+  margin: 0;
+  color: #607068;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+app-root .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+app-root .step-card {
+  padding: 28px 25px;
+  border: 1px solid #e6ebe3;
+  border-radius: 18px;
+  background: #fff;
+}
+
+app-root .step-card > span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 24px;
+  place-items: center;
+  border-radius: 50%;
+  color: #314d32;
+  background: #e4f3d3;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+app-root .step-card p {
+  min-height: auto;
+}
+
+app-root .solution-content .product-category {
+  display: inline-block;
+  margin: 0 0 10px;
+  color: #53754b;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+app-root .solution-content .product-details {
+  min-height: auto;
+  margin-bottom: 12px;
+  color: #30483b;
+  font-size: 0.81rem;
+  font-weight: 750;
+}
+
+app-root .solution-content .product-partner {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #334a35;
+  background: #e5f1da;
+  font-size: 0.68rem;
+  font-weight: 750;
+}
+
+app-root .solution-content > a {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid #e9eee7;
+}
+
+app-root .why-section {
+  background: #edf2eb;
+}
+
+app-root .contact-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+app-root .contact-address {
+  margin: 17px 0 8px;
+  color: rgba(255, 255, 255, 0.69);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+app-root .contact-website {
+  color: var(--green);
+  font-weight: 700;
+}
+
+app-root .trusted-partners {
+  margin-top: 58px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+app-root .trusted-partners > p {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+app-root .partner-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+app-root .partner-name {
+  display: grid;
+  min-height: 92px;
+  padding: 16px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 13px;
+  background: #fff;
+}
+
+app-root .partner-logo {
+  display: block;
+  width: 100%;
+  max-width: 170px;
+  height: 56px;
+  object-fit: contain;
+}
+
+@media (max-width: 980px) {
+  app-root .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  app-root .directorship-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  app-root .directors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  app-root .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  app-root .directorship-layout {
+    grid-template-columns: 1fr;
+  }
+
+  app-root .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  app-root .directors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  app-root .partner-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  app-root .step-card {
+    padding: 22px;
+  }
+
+  app-root .step-card > span {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  app-root .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
