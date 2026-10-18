@@ -125,7 +125,7 @@ export class App {
   readonly directors = [
     {
       name: 'Sunil Dahiya',
-      image: '/sunil-optimized.jpg',
+      image: 'sunil-optimized.jpg',
       imageWidth: 640,
       imageHeight: 640,
       vision: 'Make dependable clean-energy and mobility solutions more accessible to communities, businesses and industries.',
@@ -134,7 +134,7 @@ export class App {
     },
     {
       name: 'Mohit Choudhary',
-      image: '/mohit-optimized.jpg',
+      image: 'mohit-optimized.jpg',
       imageWidth: 548,
       imageHeight: 640,
       vision: 'Build trusted, future-ready infrastructure that helps accelerate India’s transition to smarter mobility.',
@@ -143,7 +143,7 @@ export class App {
     },
     {
       name: 'Darpan Bhavsar',
-      image: '/darpan-optimized.jpg',
+      image: 'darpan-optimized.jpg',
       imageWidth: 640,
       imageHeight: 640,
       vision: 'Connect technology, reliable products and customer-focused support to power a cleaner energy future.',

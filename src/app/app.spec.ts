@@ -41,9 +41,9 @@ describe('App', () => {
     expect(compiled.querySelectorAll('.director-card')).toHaveLength(3);
     const directorImages = compiled.querySelectorAll<HTMLImageElement>('.director-image');
     expect(Array.from(directorImages, (image) => image.getAttribute('src'))).toEqual([
-      '/sunil-optimized.jpg',
-      '/mohit-optimized.jpg',
-      '/darpan-optimized.jpg',
+      'sunil-optimized.jpg',
+      'mohit-optimized.jpg',
+      'darpan-optimized.jpg',
     ]);
     expect(Array.from(directorImages, (image) => image.getAttribute('loading'))).toEqual(['lazy', 'lazy', 'lazy']);
     expect(Array.from(directorImages, (image) => image.alt)).toEqual([
