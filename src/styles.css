@@ -305,6 +305,13 @@ app-root .partner-logo {
 }
 
 @media (max-width: 700px) {
+  app-root .director-image {
+    width: min(100%, 360px);
+    margin-right: auto;
+    margin-left: auto;
+    object-position: center;
+  }
+
   app-root .directorship-layout {
     grid-template-columns: 1fr;
   }

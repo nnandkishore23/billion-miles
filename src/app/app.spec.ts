@@ -51,6 +51,8 @@ describe('App', () => {
       'Mohit Choudhary',
       'Darpan Bhavsar',
     ]);
+    expect(directorImages[0].classList).toContain('sunil-director-image');
+    expect(directorImages[1].classList).not.toContain('sunil-director-image');
     expect(compiled.querySelectorAll('.vision-label')).toHaveLength(3);
     expect(compiled.querySelectorAll('.director-contact a')).toHaveLength(6);
     expect(compiled.textContent).toContain('Director of the Company');

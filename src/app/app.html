@@ -131,6 +131,7 @@
             <article class="director-card">
               <img
                 class="director-image"
+                [class.sunil-director-image]="director.name === 'Sunil Dahiya'"
                 [src]="director.image"
                 [alt]="director.name"
                 [width]="director.imageWidth"
