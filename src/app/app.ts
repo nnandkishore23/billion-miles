@@ -9,7 +9,7 @@ import { Component, signal } from '@angular/core';
 export class App {
   readonly contactStatus = signal<'idle' | 'sending' | 'success' | 'error'>('idle');
   readonly contactError = signal('');
-  readonly interests = ['EV charging', 'Solar inverters', 'Solar PV modules', 'Power transformers', 'Other'];
+  readonly interests = ['EV charging', 'Home chargers', 'Solar PV modules', 'Power transformers', 'Other'];
 
   async sendContact(event: Event): Promise<void> {
     event.preventDefault();
@@ -66,8 +66,8 @@ export class App {
       details: 'Smart & connected charging',
       description: 'Reliable shared chargers for residential communities, designed to make everyday charging more convenient.',
       icon: '▦',
-      image: '/community-chargers.webp',
-      alt: 'Jio smart EV charger installed beside an electric vehicle',
+      image: '/community-ev-chargers.jpg',
+      alt: 'Electric vehicles parked beneath a shared solar-powered charging canopy',
       partner: 'JioThings · TruePower',
     },
     {
@@ -91,14 +91,14 @@ export class App {
       partner: 'JioThings · TruePower',
     },
     {
-      category: 'Solar inverters',
-      title: 'Solar inverters',
-      details: 'Commercial & utility-scale',
-      description: 'Reliable energy conversion and inverter selection support tailored to project requirements and solar applications.',
-      icon: 'ϟ',
-      image: '/solar-inverter.jpg',
-      alt: 'Wall-mounted solar inverters and energy storage equipment',
-      partner: '',
+      category: 'Home charging',
+      title: 'Home chargers',
+      details: 'Smart residential AC charging',
+      description: 'Convenient, connected home charging solutions that make it easy to charge your electric vehicle where you live.',
+      icon: '⌂',
+      image: '/ev-charging-feature.jpg',
+      alt: 'Electric vehicle charging at a home',
+      partner: 'JioThings · TruePower',
     },
     {
       category: 'Solar panels & PV modules',

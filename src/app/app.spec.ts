@@ -31,13 +31,15 @@ describe('App', () => {
     expect(compiled.textContent).toContain('Highway charging hub stations');
     expect(compiled.textContent).toContain('Community chargers');
     expect(compiled.textContent).toContain('Corporate office chargers');
-    expect(compiled.textContent).toContain('Solar inverters');
+    expect(compiled.textContent).not.toContain('Solar inverters');
+    expect(compiled.textContent).toContain('Home chargers');
     expect(compiled.textContent).toContain('Solar PV modules');
     expect(compiled.textContent).toContain('Power transformers');
-    expect(compiled.querySelectorAll('.product-partner')).toHaveLength(3);
-    expect(compiled.querySelector('.solution-card img[alt="Jio smart EV charger installed beside an electric vehicle"]')?.getAttribute('src')).toBe('/community-chargers.webp');
+    expect(compiled.querySelectorAll('.product-partner')).toHaveLength(4);
+    expect(compiled.querySelector('.solution-card img[alt="Electric vehicles parked beneath a shared solar-powered charging canopy"]')?.getAttribute('src')).toBe('/community-ev-chargers.jpg');
     expect(compiled.querySelector('.solution-card img[alt="Electric vehicle plugged in at a highway charging station"]')?.getAttribute('src')).toBe('/highway-charging-hub.jpg');
     expect(compiled.querySelector('.solution-card img[alt="Electric vehicle charging at a modern workplace"]')?.getAttribute('src')).toBe('/corporate-office-charger.jpg');
+    expect(compiled.querySelector('.solution-card img[alt="Electric vehicle charging at a home"]')?.getAttribute('src')).toBe('/ev-charging-feature.jpg');
     expect(compiled.querySelectorAll('.director-card')).toHaveLength(3);
     const directorImages = compiled.querySelectorAll<HTMLImageElement>('.director-image');
     expect(Array.from(directorImages, (image) => image.getAttribute('src'))).toEqual([
@@ -69,6 +71,7 @@ describe('App', () => {
     expect(compiled.textContent).toContain('Contact Us');
     expect(compiled.textContent).toContain('+91 77388 96005');
     expect(compiled.textContent).toContain('info@billioncompany.in');
+    expect(compiled.querySelector('select[name="service"] option[value="Home chargers"]')).not.toBeNull();
     const partnerLogos = compiled.querySelectorAll<HTMLImageElement>('.partner-logo');
     expect(partnerLogos).toHaveLength(8);
     expect(Array.from(partnerLogos, (image) => image.alt)).toEqual([
@@ -81,10 +84,10 @@ describe('App', () => {
       'ACE Group logo',
       'Atul logo',
     ]);
-    expect(compiled.querySelector('.solution-card img[alt="Wall-mounted solar inverters and energy storage equipment"]')?.getAttribute('src')).toBe('/solar-inverter.jpg');
+    expect(compiled.querySelector('.solution-card img[alt="Wall-mounted solar inverters and energy storage equipment"]')).toBeNull();
     expect(compiled.querySelector('.solution-card img[alt="Large power transformer at an electrical substation"]')?.getAttribute('src')).toBe('/power-transformers.jpg');
     expect(compiled.querySelector('.hero-visual img')?.getAttribute('src')).toBe('/ev-charging-feature.jpg');
-    expect(compiled.textContent).not.toContain('Home charging');
+    expect(compiled.textContent).toContain('Home charging');
     expect(compiled.textContent).not.toContain('Residential Homes');
     expect(compiled.textContent).not.toContain('Land & Plots');
   });
