@@ -35,6 +35,9 @@ describe('App', () => {
     expect(compiled.textContent).toContain('Solar PV modules');
     expect(compiled.textContent).toContain('Power transformers');
     expect(compiled.querySelectorAll('.product-partner')).toHaveLength(3);
+    expect(compiled.querySelector('.solution-card img[alt="Jio smart EV charger installed beside an electric vehicle"]')?.getAttribute('src')).toBe('/community-chargers.webp');
+    expect(compiled.querySelector('.solution-card img[alt="Electric vehicle plugged in at a highway charging station"]')?.getAttribute('src')).toBe('/highway-charging-hub.jpg');
+    expect(compiled.querySelector('.solution-card img[alt="Electric vehicle charging at a modern workplace"]')?.getAttribute('src')).toBe('/corporate-office-charger.jpg');
     expect(compiled.querySelectorAll('.director-card')).toHaveLength(3);
     expect(compiled.querySelectorAll('.vision-label')).toHaveLength(3);
     expect(compiled.querySelectorAll('.director-contact a')).toHaveLength(6);

@@ -28,7 +28,7 @@ export class App {
     this.contactStatus.set('sending');
     this.contactError.set('');
     try {
-      const response = await fetch('https://billion-miles-mailer-60092344629.catalystserverless.in/server/billion_mailer_function/send', {
+      const response = await fetch('https://billion-miles-mailer-60092344629.development.catalystserverless.in/server/billion_mailer_function/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -66,8 +66,8 @@ export class App {
       details: 'Smart & connected charging',
       description: 'Reliable shared chargers for residential communities, designed to make everyday charging more convenient.',
       icon: '▦',
-      image: 'https://images.unsplash.com/photo-1671785253964-bdb43087ed99?auto=format&fit=crop&w=900&q=85',
-      alt: 'Electric vehicle connected to a community charging point',
+      image: '/community-chargers.webp',
+      alt: 'Jio smart EV charger installed beside an electric vehicle',
       partner: 'JioThings · TruePower',
     },
     {
@@ -76,7 +76,7 @@ export class App {
       details: 'Commercial DC fast charging',
       description: 'Smart, connected fast-charging hubs for highway corridors, fleet depots, bus depots and public charging locations.',
       icon: '➜',
-      image: '/ev-charging-feature.jpg',
+      image: '/highway-charging-hub.jpg',
       alt: 'Electric vehicle plugged in at a highway charging station',
       partner: 'JioThings · TruePower',
     },
@@ -86,7 +86,7 @@ export class App {
       details: 'Workplace charging solutions',
       description: 'Convenient EV charging for corporate offices, commercial workplaces, retail destinations and visitor parking.',
       icon: '↗',
-      image: 'https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?auto=format&fit=crop&w=900&q=85',
+      image: '/corporate-office-charger.jpg',
       alt: 'Electric vehicle charging at a modern workplace',
       partner: 'JioThings · TruePower',
     },
