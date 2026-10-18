@@ -134,6 +134,16 @@
               <h3>{{ director.name }}</h3>
               <span class="vision-label">Vision</span>
               <p>{{ director.vision }}</p>
+              <div class="director-contact">
+                <a [href]="'tel:' + director.phone">
+                  <span class="director-contact-type">Phone</span>
+                  <span class="director-contact-value">{{ director.phone }}</span>
+                </a>
+                <a [href]="'mailto:' + director.email">
+                  <span class="director-contact-type">Email</span>
+                  <span class="director-contact-value">{{ director.email }}</span>
+                </a>
+              </div>
             </article>
           }
         </div>
@@ -252,7 +262,7 @@
               <input name="phone" type="tel" maxlength="30" autocomplete="tel" />
             </label>
             <label>Interested in
-              <select name="interest">
+              <select name="service" required>
                 @for (item of interests; track item) {
                   <option [value]="item">{{ item }}</option>
                 }

@@ -18,16 +18,23 @@ export class App {
       form.reportValidity();
       return;
     }
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get('name') ?? ''),
+      email: String(formData.get('email') ?? ''),
+      message: String(formData.get('message') ?? ''),
+      service: String(formData.get('service') ?? ''),
+    };
     this.contactStatus.set('sending');
+    this.contactError.set('');
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://billion-miles-mailer-60092344629.catalystserverless.in/server/billion_mailer_function/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        body: JSON.stringify(payload),
       });
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error ?? 'Something went wrong. Please try again.');
+        throw new Error(`Message could not be sent (HTTP ${response.status}). Please try again.`);
       }
       form.reset();
       this.contactStatus.set('success');
@@ -100,7 +107,7 @@ export class App {
       description: 'PV module supply and product coordination for solar EPCs, developers and industrial facilities.',
       icon: '▤',
       image: '/solar-pv-modules.jpg',
-      alt: 'Solar PV modules shown in the product brochure',
+      alt: 'Solar PV panels at a utility-scale solar farm',
       partner: '',
     },
     {
@@ -119,14 +126,20 @@ export class App {
     {
       name: 'Sunil Dhaiya',
       vision: 'Make dependable clean-energy and mobility solutions more accessible to communities, businesses and industries.',
+      phone: '+919717112334',
+      email: 'sunil.dahiya@billioncompany.in',
     },
     {
       name: 'Mohit Choudhary',
       vision: 'Build trusted, future-ready infrastructure that helps accelerate India’s transition to smarter mobility.',
+      phone: '+919896161511',
+      email: 'mohit.choudhary@billioncompany.in',
     },
     {
       name: 'Darpan Bhavsar',
       vision: 'Connect technology, reliable products and customer-focused support to power a cleaner energy future.',
+      phone: '+919510863030',
+      email: 'darpan.bhavsar@billioncompany.in',
     },
   ];
 
