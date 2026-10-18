@@ -125,18 +125,27 @@ export class App {
   readonly directors = [
     {
       name: 'Sunil Dahiya',
+      image: '/sunil-optimized.jpg',
+      imageWidth: 640,
+      imageHeight: 640,
       vision: 'Make dependable clean-energy and mobility solutions more accessible to communities, businesses and industries.',
       phone: '+919717112334',
       email: 'sunil.dahiya@billioncompany.in',
     },
     {
       name: 'Mohit Choudhary',
+      image: '/mohit-optimized.jpg',
+      imageWidth: 548,
+      imageHeight: 640,
       vision: 'Build trusted, future-ready infrastructure that helps accelerate India’s transition to smarter mobility.',
       phone: '+919896161511',
       email: 'mohit.choudhary@billioncompany.in',
     },
     {
       name: 'Darpan Bhavsar',
+      image: '/darpan-optimized.jpg',
+      imageWidth: 640,
+      imageHeight: 640,
       vision: 'Connect technology, reliable products and customer-focused support to power a cleaner energy future.',
       phone: '+919510863030',
       email: 'darpan.bhavsar@billioncompany.in',

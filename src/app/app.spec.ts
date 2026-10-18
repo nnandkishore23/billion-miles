@@ -39,10 +39,22 @@ describe('App', () => {
     expect(compiled.querySelector('.solution-card img[alt="Electric vehicle plugged in at a highway charging station"]')?.getAttribute('src')).toBe('/highway-charging-hub.jpg');
     expect(compiled.querySelector('.solution-card img[alt="Electric vehicle charging at a modern workplace"]')?.getAttribute('src')).toBe('/corporate-office-charger.jpg');
     expect(compiled.querySelectorAll('.director-card')).toHaveLength(3);
+    const directorImages = compiled.querySelectorAll<HTMLImageElement>('.director-image');
+    expect(Array.from(directorImages, (image) => image.getAttribute('src'))).toEqual([
+      '/sunil-optimized.jpg',
+      '/mohit-optimized.jpg',
+      '/darpan-optimized.jpg',
+    ]);
+    expect(Array.from(directorImages, (image) => image.getAttribute('loading'))).toEqual(['lazy', 'lazy', 'lazy']);
+    expect(Array.from(directorImages, (image) => image.alt)).toEqual([
+      'Sunil Dahiya',
+      'Mohit Choudhary',
+      'Darpan Bhavsar',
+    ]);
     expect(compiled.querySelectorAll('.vision-label')).toHaveLength(3);
     expect(compiled.querySelectorAll('.director-contact a')).toHaveLength(6);
     expect(compiled.textContent).toContain('Director of the Company');
-    expect(compiled.textContent).toContain('Sunil Dhaiya');
+    expect(compiled.textContent).toContain('Sunil Dahiya');
     expect(compiled.textContent).toContain('Mohit Choudhary');
     expect(compiled.textContent).toContain('Darpan Bhavsar');
     expect(compiled.querySelector('a[href="tel:+919717112334"]')?.textContent).toContain('+919717112334');

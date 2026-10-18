@@ -75,17 +75,14 @@ app-root .director-card {
   background: #f7f9f5;
 }
 
-app-root .director-avatar {
-  display: grid;
-  width: 49px;
-  height: 49px;
+app-root .director-image {
+  width: 100%;
+  aspect-ratio: 1;
   margin-bottom: 19px;
-  place-items: center;
-  border-radius: 50%;
-  color: #183327;
-  background: #d9efbb;
-  font-size: 1.2rem;
-  font-weight: 800;
+  border-radius: 13px;
+  background: #e7eee3;
+  object-fit: cover;
+  object-position: center 25%;
 }
 
 app-root .director-title {

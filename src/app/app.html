@@ -129,7 +129,15 @@
         <div class="directors-grid">
           @for (director of directors; track director.name) {
             <article class="director-card">
-              <div class="director-avatar" aria-hidden="true">{{ director.name.charAt(0) }}</div>
+              <img
+                class="director-image"
+                [src]="director.image"
+                [alt]="director.name"
+                [width]="director.imageWidth"
+                [height]="director.imageHeight"
+                loading="lazy"
+                decoding="async"
+              />
               <span class="director-title">Director of the Company</span>
               <h3>{{ director.name }}</h3>
               <span class="vision-label">Vision</span>
