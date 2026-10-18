@@ -124,7 +124,7 @@ export class App {
 
   readonly directors = [
     {
-      name: 'Sunil Dhaiya',
+      name: 'Sunil Dahiya',
       vision: 'Make dependable clean-energy and mobility solutions more accessible to communities, businesses and industries.',
       phone: '+919717112334',
       email: 'sunil.dahiya@billioncompany.in',
