@@ -138,7 +138,7 @@ export class App {
       imageWidth: 548,
       imageHeight: 640,
       vision: 'Build trusted, future-ready infrastructure that helps accelerate India’s transition to smarter mobility.',
-      phone: '+919896161511',
+      phone: '+919996855319',
       email: 'mohit.choudhary@billioncompany.in',
     },
     {
